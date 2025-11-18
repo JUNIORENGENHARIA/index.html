@@ -1,0 +1,225 @@
+[index.html (2).html](https://github.com/user-attachments/files/23610112/index.html.2.html)
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Controle de Painéis - Linha TKE</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #5a2d82;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+    header img {
+        height: 50px;
+    }
+    h1 {
+        font-size: 1.6em;
+        margin: 0;
+    }
+    .container {
+        padding: 20px;
+    }
+    input, select, button {
+        padding: 8px;
+        margin: 5px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+    button {
+        background-color: #f36f21;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    button:hover {
+        background-color: #d45f1d;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+    th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+    th {
+        background-color: #5a2d82;
+        color: white;
+    }
+    tr.desmontado {
+        background-color: #ffdddd;
+        color: #a00;
+    }
+    .search-box {
+        float: right;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Controle de Painéis - Linha TKE</h1>
+    <img src="data:image/png;base64,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" alt="Logo TKE">
+</header>
+
+<div class="container">
+    <div>
+        <input type="text" id="codigo" placeholder="Código do Painel">
+        <input type="text" id="revisao" placeholder="Revisão">
+        <button onclick="adicionarPainel()">Adicionar Painel</button>
+        <button onclick="exportarDados()">Exportar Dados</button>
+        <input type="file" id="importarArquivo" accept=".json" style="display:none" onchange="importarDados(event)">
+        <button onclick="document.getElementById('importarArquivo').click()">Importar Dados</button>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="pesquisa" placeholder="Pesquisar..." onkeyup="pesquisarPainel()">
+    </div>
+
+    <table id="tabela">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Revisão</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script>
+const senhaPadrao = "1234";
+
+function salvarLocal(paineis) {
+    localStorage.setItem("paineisTKE", JSON.stringify(paineis));
+}
+
+function carregarLocal() {
+    return JSON.parse(localStorage.getItem("paineisTKE") || "[]");
+}
+
+function renderizarTabela() {
+    const tbody = document.querySelector("#tabela tbody");
+    tbody.innerHTML = "";
+    const paineis = carregarLocal();
+    paineis.forEach((painel, i) => {
+        const tr = document.createElement("tr");
+        if (painel.status === "Desmontado") tr.classList.add("desmontado");
+
+        tr.innerHTML = `
+            <td>${painel.codigo}</td>
+            <td>${painel.revisao}</td>
+            <td>${painel.status}</td>
+            <td>
+                <button onclick="alterarStatus(${i})">Mudar Status</button>
+                <button onclick="editarPainel(${i})">Editar</button>
+                <button onclick="excluirPainel(${i})">Excluir</button>
+            </td>`;
+        tbody.appendChild(tr);
+    });
+}
+
+function adicionarPainel() {
+    const codigo = document.getElementById("codigo").value.trim();
+    const revisao = document.getElementById("revisao").value.trim();
+    if (!codigo || !revisao) return alert("Preencha o código e a revisão.");
+    const paineis = carregarLocal();
+    paineis.push({codigo, revisao, status: "Montado"});
+    salvarLocal(paineis);
+    renderizarTabela();
+    document.getElementById("codigo").value = "";
+    document.getElementById("revisao").value = "";
+}
+
+function editarPainel(i) {
+    const senha = prompt("Digite a senha para editar:");
+    if (senha !== senhaPadrao) return alert("Senha incorreta!");
+    const paineis = carregarLocal();
+    const novoCodigo = prompt("Novo código:", paineis[i].codigo);
+    const novaRevisao = prompt("Nova revisão:", paineis[i].revisao);
+    if (novoCodigo && novaRevisao) {
+        paineis[i].codigo = novoCodigo;
+        paineis[i].revisao = novaRevisao;
+        salvarLocal(paineis);
+        renderizarTabela();
+    }
+}
+
+function excluirPainel(i) {
+    const senha = prompt("Digite a senha para excluir:");
+    if (senha !== senhaPadrao) return alert("Senha incorreta!");
+    const paineis = carregarLocal();
+    paineis.splice(i, 1);
+    salvarLocal(paineis);
+    renderizarTabela();
+}
+
+function alterarStatus(i) {
+    const senha = prompt("Digite a senha para alterar status:");
+    if (senha !== senhaPadrao) return alert("Senha incorreta!");
+    const paineis = carregarLocal();
+    paineis[i].status = paineis[i].status === "Montado" ? "Desmontado" : "Montado";
+    salvarLocal(paineis);
+    renderizarTabela();
+}
+
+function pesquisarPainel() {
+    const termo = document.getElementById("pesquisa").value.toLowerCase();
+    const linhas = document.querySelectorAll("#tabela tbody tr");
+    linhas.forEach(linha => {
+        const texto = linha.textContent.toLowerCase();
+        linha.style.display = texto.includes(termo) ? "" : "none";
+    });
+}
+
+function exportarDados() {
+    const paineis = carregarLocal();
+    const blob = new Blob([JSON.stringify(paineis, null, 2)], {type: "application/json"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "backup_paineis_TKE.json";
+    a.click();
+}
+
+function importarDados(event) {
+    const arquivo = event.target.files[0];
+    if (!arquivo) return;
+    const leitor = new FileReader();
+    leitor.onload = function(e) {
+        try {
+            const dados = JSON.parse(e.target.result);
+            if (Array.isArray(dados)) {
+                salvarLocal(dados);
+                renderizarTabela();
+                alert("Dados importados com sucesso!");
+            } else {
+                alert("Arquivo inválido.");
+            }
+        } catch (err) {
+            alert("Erro ao importar o arquivo.");
+        }
+    };
+    leitor.readAsText(arquivo);
+}
+
+window.onload = renderizarTabela;
+</script>
+</body>
+</html>
